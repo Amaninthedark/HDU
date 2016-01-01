@@ -1,0 +1,49 @@
+# <font color=DeepSkyBlue size=72>HDU</font>
+## 1395       2^X MOD N = 1
+### Problem Description
+> Give a number n,find the minimum x(x>0) that satisfies 2^x mod n = 1.
+### Input
+> One positive integer on each line, the value of n.
+### Output
+> If the minimum x exists, print a line with 2^x mod n = 1.
+>Print 2^? mod n = 1 otherwise.
+>You should replace x and n with specific numbers.
+### Sample Input
+* 2
+* 5
+### Sample Output
+* 2^? mod 2 = 1
+* 2^4 mod 5 = 1
+
+
+### Code
+    #include<stdio.h>
+    #include<math.h>
+    int main()
+    {
+     int n, m;
+     int i;
+     int sum;
+     while (~scanf_s("%d", &n)){
+      if (n % 2 == 0 || n == 1){
+       printf("2^? mod %d = 1\n",n);
+      }
+      else{
+       sum = 2;
+       for (i = 1;; i++)
+       {
+        sum = sum%n;
+        if (sum == 1)
+        {
+         break;
+        }
+        sum = sum * 2;
+       }
+       printf("2^%d mod %d = 1\n", i,n);
+      }
+     }
+    }
+
+### Link
+* 
+[This link](http://acm.hdu.edu.cn/showproblem.php?pid=1395/) Link to this question
